@@ -15,6 +15,14 @@ public class ListViewController: UIViewController {
     public var headerData: ListModel?
     public var listData: [ListModel]?
     
+    public init() {
+        super.init(nibName: "ListViewController", bundle: Bundle(for: ListViewController.self))
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     var viewModel = ListViewModel()
     
     public override func viewDidLoad() {
