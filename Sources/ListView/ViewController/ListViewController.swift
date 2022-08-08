@@ -36,7 +36,7 @@ public class ListViewController: UIViewController {
     func registerTableViewCell() {
         let nibName = UINib(nibName: ListTableViewCell.className, bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: ListTableViewCell.className)
-        tableView.estimatedRowHeight = 120
+        tableView.estimatedRowHeight = 44
     }
     
     public func reloadTable(with newData: [ListModel]) {
