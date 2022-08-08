@@ -27,7 +27,7 @@ public class ListViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setUpViewModel()
         registerTableViewCell()
     }
     
