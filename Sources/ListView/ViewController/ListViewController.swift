@@ -67,9 +67,6 @@ extension ListViewController: UITableViewDataSource {
             cell.configureCell(labelColor: item.color, data: item.data)
             return cell
         }
-        
-        // Loading of next page yet to be implemented
-        
         return UITableViewCell()
     }
 }
