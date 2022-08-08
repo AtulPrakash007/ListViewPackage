@@ -11,17 +11,9 @@ import UIKit
 public class ListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    public static let storyboardVC = UIStoryboard(name: "ListViewPackage", bundle: Bundle.module).instantiateInitialViewController()!
+//    public static let storyboardVC = UIStoryboard(name: "ListViewPackage", bundle: Bundle.module).instantiateInitialViewController()!
     public var headerData: ListModel?
     public var listData: [ListModel]?
-    
-    public init() {
-        super.init(nibName: "ListViewController", bundle: Bundle(for: ListViewController.self))
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     var viewModel = ListViewModel()
     
@@ -75,4 +67,3 @@ extension ListViewController: UITableViewDataSource {
 extension ListViewController: UITableViewDelegate {
     
 }
-
