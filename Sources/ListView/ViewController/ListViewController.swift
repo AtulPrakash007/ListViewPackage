@@ -54,12 +54,12 @@ extension ListViewController: UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.className, for: indexPath) as? ListTableViewCell {
-            let item = viewModel.itemAtIndexPath(indexPath: indexPath.row)
-            cell.configureCell(labelColor: item.color, data: item.data)
-            return cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.className, for: indexPath) as? ListTableViewCell else {
+            return UITableViewCell()
         }
-        return UITableViewCell()
+        let item = viewModel.itemAtIndexPath(indexPath: indexPath.row)
+        cell.configureCell(labelColor: item.color, data: item.data)
+        return cell
     }
 }
 

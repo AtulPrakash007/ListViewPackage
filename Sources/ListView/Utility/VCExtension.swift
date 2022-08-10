@@ -30,3 +30,9 @@ extension UIViewController {
         return "\(self)"
     }
 }
+
+extension UIView {
+    static var className: String {
+        return String(describing: self)
+    }
+}
