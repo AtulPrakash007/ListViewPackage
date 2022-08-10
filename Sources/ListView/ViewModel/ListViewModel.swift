@@ -43,11 +43,10 @@ class ListViewModel {
         if let tableData = tableData {
             let value = tableData[indexPath - 1]
             let labelColor = self.getLabelColor(percent: value.changePercent)
-            
-            let model = ListModel(rank: value.rank, name: value.name, changePercent: value.changePercent, price: value.price)
+            print("Model Value: \(value) at index: \(indexPath-1)")
             let color = ListLabelColor(rankColor: .lightText, nameColor: .white, percentColor: labelColor, priceColor: labelColor)
             
-            return (model, color)
+            return (value, color)
         } else {
             return (emptyLabel, defaultLabelColor)
         }
