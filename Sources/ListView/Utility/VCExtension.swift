@@ -12,7 +12,7 @@ public enum AppStoryboard: String {
     case main = "ListViewPackage"
 
     var instance: UIStoryboard {
-        return UIStoryboard(name: rawValue, bundle: Bundle.main)
+        return UIStoryboard(name: rawValue, bundle: Bundle.module)
     }
     
     func viewController<T: UIViewController>(viewControllerClass: T.Type) -> T? {
