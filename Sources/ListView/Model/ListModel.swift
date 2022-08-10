@@ -22,7 +22,7 @@ public struct ListModel {
     }
 }
 
-struct ListLabelColor {
+public struct ListLabelColor {
     let rankColor: UIColor
     let nameColor: UIColor
     let percentColor: UIColor

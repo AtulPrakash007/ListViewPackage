@@ -42,11 +42,10 @@ class ListViewModel {
     private func getCellData(indexPath: Int) -> (ListModel, ListLabelColor) {
         if let tableData = tableData {
             let value = tableData[indexPath - 1]
-            let priceChange = self.getPriceAndColor(percent: value.changePercent)
-            let price = Double(value.price)?.rounded(toPlaces: 2) ?? 0.0
+            let labelColor = self.getLabelColor(percent: value.changePercent)
             
-            let model = ListModel(rank: value.rank, name: value.name, changePercent: priceChange.percent, price: String(price))
-            let color = ListLabelColor(rankColor: .lightText, nameColor: .white, percentColor: priceChange.color, priceColor: priceChange.color)
+            let model = ListModel(rank: value.rank, name: value.name, changePercent: value.changePercent, price: value.price)
+            let color = ListLabelColor(rankColor: .lightText, nameColor: .white, percentColor: labelColor, priceColor: labelColor)
             
             return (model, color)
         } else {
@@ -54,17 +53,16 @@ class ListViewModel {
         }
     }
     
-    private func getPriceAndColor(percent: String) -> (percent: String, color: UIColor) {
-        let doubleValue = Double(percent)
-        guard let roundedValue = doubleValue?.rounded(toPlaces: 2) else {
-            return ("", .green)
+    private func getLabelColor(percent: String) -> UIColor {
+        guard let doubleValue = Double(percent) else {
+            return .green
         }
         
-        switch roundedValue.sign {
+        switch doubleValue.sign {
         case .minus:
-            return (String(roundedValue), .red)
+            return .red
         case .plus:
-            return (String(roundedValue), .green)
+            return .green
         }
     }
 }
