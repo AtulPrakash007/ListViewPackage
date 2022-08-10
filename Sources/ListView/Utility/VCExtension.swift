@@ -22,7 +22,7 @@ public enum AppStoryboard: String {
 }
 
 extension UIViewController {
-    static func instantiate(fromStoryboard storyboard: AppStoryboard) -> Self? {
+    public static func instantiate(fromStoryboard storyboard: AppStoryboard) -> Self? {
         return storyboard.viewController(viewControllerClass: self) ?? nil
     }
     
