@@ -34,7 +34,7 @@ public class ListViewController: UIViewController {
     }
     
     func registerTableViewCell() {
-        let nibName = UINib(nibName: ListTableViewCell.className, bundle: nil)
+        let nibName = UINib(nibName: ListTableViewCell.className, bundle: Bundle.module)
         tableView.register(nibName, forCellReuseIdentifier: ListTableViewCell.className)
         tableView.estimatedRowHeight = 44
     }
